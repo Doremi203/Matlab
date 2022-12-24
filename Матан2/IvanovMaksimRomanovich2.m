@@ -1,11 +1,15 @@
 %%Task1
-[x1,fval1]=fsolve(@Main1,[1,1],optimset("Display","iter"));
-[x2,fval2]=fsolve(@Main2,[1,1,0],optimset("Display","iter"));
+disp("Task1")
+
+[x1,fval1]=fsolve(@fuc1,[1,1],optimset('Display','iter'))
+[x2,fval2]=fsolve(@fuc2,[1,1,0],optimset("Display","iter"))
 
 %%Task2
 disp("Task2")
 syms x;
+disp("Предел слева")
 limit((10 + x) ^ (1 / x), x, 0, "left")
+disp("Предел справа")
 limit((10 + x) ^ (1 / x), x, 0, "right")
 
 %%Task3
@@ -198,12 +202,12 @@ y = exp(-a * x^5) + log(a^n + x^a) - (a * n) / x^3;
 diff(y,x,2)
 
 %%Functions
-function F = Main1( x )
-    F(1)=x(1)^2-2*x(2)^2+1;
-    F(2)=-3*x(1)^2+x(2)^2+2;
-    F(3)=x(1)^3+x(2)^3-2;
+function F = fuc1(x)
+    F(1) = x(1)^2 - 2 * x(2)^2 + 1;
+    F(2) = -3 * x(1)^2 + x(2)^2 + 2;
+    F(3) = x(1)^3 + x(2)^3 - 2;
 end
-function F2 = Main2( x )
+function F2 = fuc2( x )
     F2(1)=x(1)^2-2*x(2)^2+x(3)+1;
     F2(2)=-3*x(1)^2+x(2)^2+x(3)+2;
 end

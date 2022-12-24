@@ -100,7 +100,6 @@ b = 1;
 z = 0.5 * x.^2 / a^2 - y.^2 / b^2;
 surf(x,y,z)
 [u,v,w] = surfnorm(x,y,z);
-hold on
 quiver3(x, y, z,u, v, w, 4, "Color", "r")
 view(110,20)
 
@@ -147,9 +146,9 @@ w = z./sqrt(x.^2 + y.^2 + z.^2);
 [Cx, Cy, Cz] = meshgrid(xL:(xR - xL) / 3:xR, yL:(yR - yL) / 3:yR, zL:(zR - zL) / 3:zR);
 hC = coneplot(x, y, z, u, v, w, Cx, Cy, Cz, 4);
 set(hC, "FaceColor", "g", "EdgeColor", "none");
-axis tight
-view(31, 28)
 light
+axis tight
 xlabel("X")
 ylabel("Y")
 zlabel("Z")
+view(31, 28)

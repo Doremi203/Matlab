@@ -50,6 +50,7 @@ figure("Name","Task5");
 hold on, grid on;
 
 subplot(1,3,1)
+title("LogXLogY")
 x = 0:0.01:10;
 f = log(2 * x);
 g = log(x).*sin(2 * x);
@@ -60,20 +61,20 @@ loglog(x, g, "Color", "r")
 legend("f(x)", "g(x)", "Location", "northwest")
 xlabel("LogX");
 ylabel("LogY");
-title("LogXLogY")
 hold off;
 
 subplot(1,3,2)
+title("SemiLogX")
 semilogx(x, f, "Color", "g")
 hold on;
 semilogx(x, g, "Color", "r")
 legend("f(x)", "g(x)", "Location", "northwest")
 xlabel("LogX");
 ylabel("Y");
-title("SemiLogX")
 hold off;
 
 subplot(1,3,3)
+title("SemiLogY")
 semilogy(x, f, "Color", "g")
 hold on;
 semilogy(x, g, "Color", "r")
@@ -81,7 +82,6 @@ hold off;
 legend("f(x)", "g(x)", "Location", "northwest")
 xlabel("X");
 ylabel("LogY");
-title("SemiLogY")
 
 %%Task6
 figure("Name","Task6");
